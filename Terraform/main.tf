@@ -3,7 +3,7 @@ terraform {
         bucket = "terraform-state-files-26398476"
         key = "./terraform.tfstate"
         region = "eu-west-2"
-        dynamodb_table = "terraformlocks-mohit-87455672973"
+        dynamodb_table = "terraform-locks-mohit-87455672979590"
         encrypt = true
   }
 }
@@ -22,7 +22,7 @@ provider "aws" {
 }
 
 resource "aws_dynamodb_table" "terraform-locks" {
-    name         = "terraform-locks-mohit-87455672973"
+    name         = "terraform-locks-mohit-87455672979590" #"terraform-locks-mohit-87455672973"
     billing_mode = "PAY_PER_REQUEST"
     hash_key     = "LockID"
 
