@@ -11,9 +11,14 @@ pipeline {
         //         sh "bash jenkins/test.sh"  
         //     }
         // }
-        stage('Deploy') {
+        stage('Terraform') {
             steps {
-                sh "bash jenkins/deploy.sh"
+                sh "bash jenkins/terraform.sh"
+            }
+        }
+        stage('Docker'){
+            steps {
+                sh "docker-compose build --parallel && docker-compose up -d && docker-compose push"
             }
         }
     }

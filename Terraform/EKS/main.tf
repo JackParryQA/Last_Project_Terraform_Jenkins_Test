@@ -15,7 +15,7 @@ resource "aws_eks_node_group" "project_node_group" {
   subnet_ids = var.subnet_ids
   scaling_config {
     desired_size = 3
-    max_size = 4
+    max_size = 5
     min_size = 1
   }
   # depends_on = var.iam_roles_eks_node
